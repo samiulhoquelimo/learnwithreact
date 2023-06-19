@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 3 Assignment</title>
+    <link rel="stylesheet" href="css/milligram.css">
+</head>
+<body>
+
+<section>
+    14.AJAX Get Request:
+    <br>
+    a. Implement a JavaScript function that sends an AJAX GET request to the following URL:
+    "https://api.example.com/data".
+    <br>
+    <button onclick="getRequest()">Get Request</button>
+</section>
+
+<script>
+    async function getRequest() {
+        const url = "https://api.example.com/data";
+        let response = await axios.get(url);
+        if (response.status === 200) {
+            console.log(response);
+        } else {
+            alert("Error!");
+        }
+    }
+</script>
+<script src="js/axios.min.js"></script>
+</body>
+</html>

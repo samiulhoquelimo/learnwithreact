@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 3 Assignment</title>
+    <link rel="stylesheet" href="css/milligram.css">
+</head>
+<body>
+
+<section>
+    15.AJAX Post Request:
+    <br>
+    a. Implement a JavaScript function that sends an AJAX POST request to the following URL:
+    "https://api.example.com/submit".
+    <br>
+    b. Send a JSON payload with the following data: { "name": "John Doe", "email": "johndoe@example.com" }.
+    <br>
+    <button onclick="postRequest()">Post Request</button>
+</section>
+
+<script>
+    async function postRequest() {
+        const url = "https://api.example.com/data";
+        const payload = {
+            name: "John Doe",
+            email: "johndoe@example.com"
+        };
+        let response = await axios.post(url, payload);
+        if (response.status === 200) {
+            console.log(response);
+        } else {
+            alert("Error!");
+        }
+    }
+</script>
+<script src="js/axios.min.js"></script>
+</body>
+</html>

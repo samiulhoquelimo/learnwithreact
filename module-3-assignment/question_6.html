@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 3 Assignment</title>
+    <link rel="stylesheet" href="css/milligram.css">
+</head>
+<body>
+
+<section>
+    6.Geolocation:
+    <br>
+    a. Implement a JavaScript function that retrieves the user's current location (latitude and longitude) using the
+    geolocation API.
+    <br>
+    <button onclick="requestGeolocation()">Get Location</button>
+    <br>
+    <p id="question"></p>
+</section>
+
+<script>
+    function requestGeolocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, fail);
+        } else {
+            alert("browser does not support geolocation service");
+        }
+    }
+
+    function success(position) {
+        document.getElementById("question").innerHTML = `Lat: ${position.coords.latitude}, Long: ${position.coords.longitude}`;
+    }
+
+    function fail() {
+        document.getElementById("question").innerHTML = "Failed";
+    }
+</script>
+
+</body>
+</html>

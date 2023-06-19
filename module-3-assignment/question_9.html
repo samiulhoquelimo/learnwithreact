@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 3 Assignment</title>
+    <link rel="stylesheet" href="css/milligram.css">
+</head>
+<body>
+
+<section>
+    9.JS DOM Working with Form Input:
+    <br>
+    Implement a webpage with a form that has the following fields:
+    <br>
+    a. Name (text input)
+    <br>
+    b. Email (email input)
+    <br>
+    c. Password (password input)
+    <br>
+    d. Confirm Password (password input)
+    <br>
+    e. Submit (button)
+    <br>
+    Implement JavaScript validation for the form fields:
+    <br>
+    f. Name should not be empty and should contain only letters.
+    <br>
+    g. Email should be a valid email address.
+    <br>
+    h. Password should have a minimum length of 8 characters and contain at least one uppercase letter, one lowercase
+    letter, and one digit.
+    <br>
+    i. Confirm Password should match the Password field.
+    <br>
+    j. Display appropriate error messages for invalid fields.
+</section>
+
+<br>
+<br>
+<br>
+
+<section>
+    <form name="registration" action="/question_9.html" onsubmit="return submit()" method="post">
+        <label>Name: <input type="text" name="name"> </label>
+        <br/>
+        <label>Email:<input type="text" name="email"> </label>
+        <br/>
+        <label>Password:<input type="text" name="password"> </label>
+        <br/>
+        <label>Confirm Password:<input type="text" name="confirm"> </label>
+        <br/>
+        <input type="submit">
+    </form>
+</section>
+
+<script>
+
+    function submit() {
+        let name = document.forms["registration"]["name"].value;
+        let email = document.forms["registration"]["email"].value;
+        let password = document.forms["registration"]["password"].value;
+        let confirm = document.forms["registration"]["confirm"].value;
+
+        if (name === "") {
+            alert("Name should not be empty");
+            return false;
+        }
+        if (!/[^a-zA-Z]/.test(name)) {
+            alert("Name should contain only letters.");
+            return false;
+        }
+        const validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (!email.match(validEmail)) {
+            alert("Invalid email address");
+            return false;
+        }
+        const validPassword = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+        if (!password.match(validPassword)) {
+            alert("Invalid password");
+            return false;
+        }
+        if (password !== confirm) {
+            alert("Confirm password not matched");
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>

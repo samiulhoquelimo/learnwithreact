@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 3 Assignment</title>
+    <link rel="stylesheet" href="css/milligram.css">
+</head>
+<body>
+<section>
+    1.Date Object:
+    <br>
+    a. Create a function that takes a date in the format "YYYY-MM-DD" as a parameter and returns the day of the week
+    for that date. The function should use the Date object.
+    <br>
+    <p id="question-a"></p>
+    <br>
+    b. Implement the function to display the day of the week for the current date.
+    <br>
+    <p id="question-b"></p>
+</section>
+
+<script>
+    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    function showDate(input) {
+        let date = new Date(input);
+        return weekday[date.getDay()];
+    }
+
+    document.getElementById("question-a").innerHTML = showDate("2023-06-19");
+
+    function dayOfTheWeek() {
+        const now = new Date();
+        return weekday[now.getDay()];
+    }
+
+    document.getElementById("question-b").innerHTML = dayOfTheWeek();
+
+</script>
+
+</body>
+</html>

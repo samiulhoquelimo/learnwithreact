@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 3 Assignment</title>
+    <link rel="stylesheet" href="css/milligram.css">
+</head>
+<body>
+
+<section>
+    5.Navigator Object:
+    <br>
+    a. Write a JavaScript function that detects the user's browser name and version using the navigator object.
+    <br>
+    b. Implement the function to display the user's browser name and version.
+    <br>
+    <p id="question"></p>
+</section>
+
+
+<script>
+    function checkBrowserAndVersion() {
+        return `Browser name: ${navigator.userAgent}<br>Version: ${navigator.appVersion}`;
+    }
+
+    document.getElementById("question").innerHTML = checkBrowserAndVersion();
+
+</script>
+
+</body>
+</html>
