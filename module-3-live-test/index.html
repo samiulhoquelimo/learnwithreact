@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/milligram.css">
+</head>
+<body>
+<div id="loader" class="loading d-none">
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            Question
+
+            Write a statement to send a POST request to the URL "https://api.example.com/data" with the data `{ name:
+            "John", age: 30 }` and handle the response using a callback function `handleResponse`.
+        </div>
+    </div>
+</div>
+<br>
+<button onclick="requestPost()">Request</button>
+
+<script>
+    async function requestPost() {
+        const url = "https://api.example.com/data"
+        const payload = {
+            name: "John",
+            age: 30
+        }
+        axios.post(url, payload)
+            .then(handleResponse)
+            .catch(handleError)
+    }
+
+    function handleResponse(response) {
+        // handle success response
+        console.log(response.data)
+        alert("Success")
+    }
+
+    function handleError(error) {
+        // handle error response
+        console.log(error)
+        alert(`Failed: ${error}`)
+    }
+</script>
+<script src="js/axios.min.js"></script>
+</body>
+</html>
