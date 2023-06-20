@@ -41,8 +41,10 @@
 <br>
 
 <section>
-    <form name="registration" action="/question_9.html" onsubmit="return submit()" method="post">
-        <label>Name: <input type="text" name="name"> </label>
+    <form name="registration" action="question_9.html" onsubmit="validateForm(); return false" method="post">
+        <label>Name:
+            <input type="text" name="name">
+        </label>
         <br/>
         <label>Email:<input type="text" name="email"> </label>
         <br/>
@@ -50,13 +52,16 @@
         <br/>
         <label>Confirm Password:<input type="text" name="confirm"> </label>
         <br/>
-        <input type="submit">
+        <input type="submit" value="Submit">
     </form>
+
+    <br>
+
 </section>
 
 <script>
 
-    function submit() {
+    function validateForm() {
         let name = document.forms["registration"]["name"].value;
         let email = document.forms["registration"]["email"].value;
         let password = document.forms["registration"]["password"].value;
@@ -64,27 +69,31 @@
 
         if (name === "") {
             alert("Name should not be empty");
-            return false;
+            return;
         }
-        if (!/[^a-zA-Z]/.test(name)) {
+        const letters = /^[A-Za-z]+$/;
+        if (!name.match(letters)) {
             alert("Name should contain only letters.");
-            return false;
+            return;
         }
         const validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (!email.match(validEmail)) {
             alert("Invalid email address");
-            return false;
+            return;
         }
         const validPassword = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
         if (!password.match(validPassword)) {
             alert("Invalid password");
-            return false;
+            return;
         }
         if (password !== confirm) {
             alert("Confirm password not matched");
-            return false;
+            return;
         }
+        alert("Success");
     }
+
+
 </script>
 
 </body>
