@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Test</title>
+</head>
+<body>
+
+<div class="container">
+    Question
+
+    Write a function in javascript called "countVowels" that takes a string as input and returns the number of
+    vowels (a, e, i, o, u) in the string. The function should be case-insensitive, meaning it should count both
+    uppercase and lowercase vowels.
+</div>
+<br>
+
+<label for="vowel">Write here</label>
+<input id="vowel" type="text" onkeyup="countInput()">
+<p id="output"></p>
+
+<script>
+
+    const vowels = ["a", "e", "i", "o", "u"]
+
+    function countInput() {
+        let vowel = document.getElementById("vowel").value
+        document.getElementById("output").innerHTML = countVowel(vowel)
+    }
+
+    function countVowel(str) {
+        let count = 0;
+
+        for (let letter of str.toLowerCase()) {
+            if (vowels.includes(letter)) {
+                count++;
+            }
+        }
+
+        return count
+    }
+
+</script>
+</body>
+</html>
