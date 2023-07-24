@@ -59,7 +59,7 @@ function ExpenseTransactions() {
                     <div
                         className="stat-value">Tk.{expense.reduce((sum, model) => 'expense' === model.type ? (sum + model.amount) : sum, 0)}</div>
                     <button
-                        onClick={() => navigate("/income")}
+                        onClick={() => navigate("/income", {replace: true})}
                         className="btn glass"><GiDivert/> Change to Income <GiDivert/></button>
                 </div>
             </div>
