@@ -1,7 +1,10 @@
 import {useEffect, useState} from "react";
+import {GiDivert} from "react-icons/gi";
+import {useNavigate} from "react-router-dom";
 
 function IncomeTransactions() {
 
+    const navigate = useNavigate();
     const [input, setInput] = useState('')
     const [income, setIncome] = useState([])
 
@@ -55,6 +58,9 @@ function IncomeTransactions() {
                     <div className="stat-title">Income</div>
                     <div
                         className="stat-value">Tk.{income.reduce((sum, model) => 'income' === model.type ? (sum + model.amount) : sum, 0)}</div>
+                    <button
+                        onClick={() => navigate("/expense")}
+                        className="btn glass"><GiDivert/> Change to Expense <GiDivert/></button>
                 </div>
             </div>
             <br/>
