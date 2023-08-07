@@ -1,0 +1,22 @@
+Assignment: Please create a basic Next.js starter project and provide a detailed description of the folder structure used in the project.
+
+-----------------------------
+        Assignment
+-----------------------------
+
+I have created a next.js project using tailwindcss, without src folder and app router.
+
+The next.js description of the folder structure:
+
+The main page is "app/page.js" is at root url.
+Here I have added few pages "about", "contact", "mission", "vision", "privacy".
+
+app/page.js: The main root page, accessible at the url ("/").
+
+app/about/page.js: The About page, accessible at the url ("/about").
+app/contact/page.js: The Contact page, accessible at the url ("/contact").
+app/mission/page.js: The Mission page, accessible at the url ("/mission").
+app/privacy/page.js: The Privacy page, accessible at the url ("/privacy").
+app/vision/page.js: The Vision page, accessible at the url ("/vision").
+
+

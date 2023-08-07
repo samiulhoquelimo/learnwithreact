@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b50f40b4-93db-4f0e-a7e4-cbc7ba4c7439" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/module-10-assignment.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/about/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/contact/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mission/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/privacy/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vision/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/note.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/next.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vercel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/.eslintrc.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/public/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/src/App.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/src/assets/react.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/src/components/About.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/src/components/Contact.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/src/components/Home.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/src/main.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module-8-live-test/vite.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": -1
+}]]></component>
+  <component name="ProjectId" id="2TdxEiG4o4AxrSql4zCuUflpn7j" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/learnwithreact/module-10-assignment/app/privacy",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.JavaScript",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\learnwithreact\module-10-assignment\app\privacy" />
+      <recent name="D:\learnwithreact\module-10-assignment\app\vision" />
+      <recent name="D:\learnwithreact\module-10-assignment\app\mission" />
+      <recent name="D:\learnwithreact\module-10-assignment\app\contact" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b50f40b4-93db-4f0e-a7e4-cbc7ba4c7439" name="Changes" comment="" />
+      <created>1691386648931</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691386648931</updated>
+      <workItem from="1691386650134" duration="3125000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
