@@ -1,0 +1,10 @@
+// Write a function that sets a cookie with the given name, value, and expiration time in  3 days.
+
+    function setCookie(name, value, days) {
+        const expires = new Date();
+        expires.setDate(expires.getDate() + days);
+        document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires.toUTCString() + '; path=/';
+    }
+
+    // Set cookie with name: "myName", value: "Md. Samiul Hoque" for 3 days
+    setCookie("myName", "Md. Samiul Hoque", 3);
