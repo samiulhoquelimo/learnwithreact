@@ -1,0 +1,31 @@
+Please create a client side component and a server side component  in Nextjs13
+
+// Client Side Component
+'use client';
+
+import {useState} from 'react';
+
+export default function ClientSideComponent() {
+    const [count, setCount] = useState(0);
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>Click me</button>
+        </div>
+    );
+}
+
+
+// Server Side Component
+export default async function ServerSideComponent() {
+    const apiResponse = await fetch("https://jsonplaceholder.typicode.com/posts")
+    const posts = apiResponse.json()
+
+    return (
+        <div>
+            {posts.map((post) => {
+                return (<p key={post.id}>{post.title}</p>);
+            })}
+        </div>
+    )
+}
