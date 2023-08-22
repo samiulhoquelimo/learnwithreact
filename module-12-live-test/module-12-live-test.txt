@@ -1,0 +1,60 @@
+Question
+
+1) How to Disable/Enable reactStrictMode in NextJS
+2) Set basePath “/newProject”. That means “http://localhost:3000/newProject” is your home page path.
+3) You have a security key like “key@123”. Now to use it by env in NextJS. And show how to use it in your application.
+4) When you run this commend “next build”. The build file generate “newBuild” folder.
+
+Answer
+
+1. In Next.js, we can enable or disable reactStrictMode by modifying the next.config.js file.
+By default, reactStrictMode is enabled. To disable it we have to: 
+
+    const nextConfig = {
+        reactStrictMode: false,
+    }
+    module.exports = nextConfig
+
+
+
+2. To set "/newProject" basePath in Next.js, we need to configure the next.config.js as:
+
+    const nextConfig = {
+        basePath: '/newProject',
+    }
+    module.exports = nextConfig
+
+Now “http://localhost:3000/newProject” will be the base path.
+
+
+
+3. To use environment variables in Next.js, we can create a ".env" file at the root of your project. And set a value like below:
+    SECURITY_KEY = key@123
+
+Now we can access the variable as below:
+    const securityKey = process.env.SECURITY_KEY 
+    console.log(securityKey); // output: "key@123"
+
+There is another way without creating an env file, that is:
+    const nextConfig = {
+        env: {
+            SECURITY_KEY: 'key@123',
+        },
+    }
+    module.exports = nextConfig
+
+Now we can access the variable same as above.
+
+
+
+4. When running this command “next build” to generate build files in "newBuild" folder, we have to configure the next.config.js as:
+    const nextConfig = {
+        distDir: 'newBuild',
+    }
+    module.exports = nextConfig
+
+With this configuration, "next build" will generate the build files in the newBuild folder.
+
+
+
+
