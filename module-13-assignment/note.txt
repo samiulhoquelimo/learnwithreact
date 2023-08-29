@@ -1,0 +1,9 @@
+মডিউল ১৩ এর এসাইনমেন্ট
+
+Api End Point =>
+
+Setting Cookies: api/set-cookie [POST]
+Reading Cookies: api/read-cookie [GET]
+JSON Response: api/welcome [GET]
+Redirection: api/redirect [GET]
+Header Modification: api/header-modify [POST]
