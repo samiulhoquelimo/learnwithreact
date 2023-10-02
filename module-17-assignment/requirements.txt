@@ -1,0 +1,18 @@
+Assignment 1 (Next.js with Prisma Structure)
+
+In this assignment we are giving you a picture of a database design diagram.
+After looking at this database design, you need to create schema with Prisma.
+mysql should be used as the database.
+
+Image link :
+https://res.cloudinary.com/amitjs/image/upload/v1696148125/Ostad/afl6leiabugtcudmxy3v.png
+
+Requirements:
+1. Must use NEXT-JS
+2. You must run the migrate operation to see that the schemas you created are working correctly.
+
+If you don't understand anywhere, go to the support session and get it resolved.
+
+Submission Instruction :
+
+Please submit your github repository link.

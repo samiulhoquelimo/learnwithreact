@@ -4,84 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6045fd80-a853-451c-8d88-0bd2d0d218e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../module-13-assignment/src/app/api/abal/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-13-assignment/src/app/api/th/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-13-assignment/src/middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/.idea/module-14-assignment.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/jsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/next.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/public/next.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/public/vercel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/src/app/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/src/app/globals.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/src/app/layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/src/app/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/src/middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module-14-assignment/tailwind.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/module-16-assignment.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/note.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/DesignAGENCY.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/facebook.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/linkedin.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/twitter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/next.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vercel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/projects/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/team/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/testimonials/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllService.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Brand.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Camp.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FeaturedProject.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Hero.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Project.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Stats.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Subscribe.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TeamList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Testimonial.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WorkList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/AllProjectApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/AllServiceApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/BrandListApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/CreateContactApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/FeaturedProjectApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/HeroListApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/SiteMetaApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/SocialLinkApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/StatListApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/TeamListApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/TestimonialListApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/WorkListApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="6045fd80-a853-451c-8d88-0bd2d0d218e8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,11 +105,24 @@
       <option name="presentableId" value="Default" />
       <updated>1696086430965</updated>
       <workItem from="1696086432348" duration="1254000" />
-      <workItem from="1696132580326" duration="14592000" />
+      <workItem from="1696132580326" duration="14806000" />
     </task>
+    <task id="LOCAL-00001" summary="module 16 assignment">
+      <option name="closed" value="true" />
+      <created>1696150683576</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696150683576</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="module 16 assignment" />
+    <option name="LAST_COMMIT_MESSAGE" value="module 16 assignment" />
   </component>
 </project>
