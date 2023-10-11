@@ -1,0 +1,66 @@
+1. “Do not know how to serialize a BigInt” – How to fix this error?
+Answer: 
+To fix this error, we can convert the BigInt to a regular JavaScript number before serializing it. 
+For example: 
+const bigIntValue = BigInt(123456789);
+const regularNumber = Number(bigIntValue);
+
+
+
+
+2. Suppose you have a student list containing data of 50 students. How to retrieve the last 5 users from here?
+Answer: Retrieve the last 5 students:
+
+// Example 1
+const lastFiveStudents = await prisma.student.findMany({
+  skip: 45, // Skip the first 45 students
+  take: 5,  // Take the next 5 students
+});
+
+// Example 2
+const lastFiveStudents = await prisma.student.findMany({
+    orderBy: {
+        id: 'desc'
+    },
+    take: -5
+});
+
+
+
+
+3. Suppose you have a list of people containing data of 20 people. How to bring the next 10 users except the first 5 from here?
+Answer: Skip the first 5 and take the next 10 users:
+
+const nextTenUsers = await prisma.person.findMany({
+  skip: 5,  // Skip the first 5 people
+  take: 10, // Take the next 10 people
+});
+
+
+
+
+4. Suppose you have a list of people containing data of 30 people. And one guy's email is - "alex@gmail.com". You want to show the data of the person under the email. How to do that?
+Answer: We can use findUnique method to retrieve the data for a person with a specific email:
+
+// Example
+const personWithEmail = await prisma.person.findUnique({
+  where: {
+    email: "alex@gmail.com",
+  },
+  select: {
+    id: true, 
+    email: true
+  }
+});
+
+if (personWithEmail) {
+    console.log("Person is found.")
+} else {
+    console.log("Person is not found.")
+}
+
+
+
+
+
+
