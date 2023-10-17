@@ -1,0 +1,88 @@
+Ques. How do Transactions & Rollback with Prisma?
+Answer: Transactions and Rollback with Prisma:
+
+Transaction is a series of database operations that are executed as a single unit.
+If any part of the transaction fails, it can roll back the entire transaction to maintain data consistency.
+Here's how we can do transactions and rollback with Prisma:
+
+Example:
+
+    const { PrismaClient } = require('@prisma/client');
+    const prisma = new PrismaClient();
+
+    async function performTransaction() {
+      try {
+        const transaction = await prisma.$transaction([
+          prisma.post.create({ data: { /* data to create */ } }),
+          prisma.post.update({ where: { /* filter */ }, data: { /* data to update */ } }),
+          prisma.post.delete({ where: { /* filter */ } }),
+        ]);
+      } catch (error) {
+        console.error('Transaction failed:', error);
+        // if an error occurs, we can rollback
+        await prisma.$transaction.rollback(transaction);
+      } finally {
+        await prisma.$disconnect(); // disconnect from the database
+      }
+    }
+
+    performTransaction();
+
+
+
+
+
+Ques. How to do Pagination with Prisma?
+Answer: Pagination with Prisma:
+Prisma allows us to implement pagination in queries by using skip and take parameters to control the number of records returned.
+Here is an example how we can do pagination with Prisma:
+
+Example:
+
+    const { PrismaClient } = require('@prisma/client');
+    const prisma = new PrismaClient();
+
+    async function paginateRecords() {
+      const pageNumber = 1;
+      const pageSize = 10;
+
+      const records = await prisma.modelName.findMany({
+        skip: (pageNumber - 1) * pageSize,
+        take: pageSize,
+      });
+
+      console.log(records);
+    }
+
+    paginateRecords();
+
+
+
+
+
+Ques. How to do time calculation and logging with Prisma?
+Answer: Time Calculation and Logging with Prisma:
+We can use JavaScript's Date object or libraries like moment or date-fns for time calculations and logging with Prisma.
+Prisma itself doesn't provide specific features for time calculations or logging.
+Here's an example of how to calculate time and log it:
+
+Example:
+
+    const { PrismaClient } = require('@prisma/client');
+    const prisma = new PrismaClient();
+
+    async function performTimeCalculation() {
+      const startTime = new Date();
+
+      // logic here
+
+      const endTime = new Date();
+      const elapsedTime = endTime - startTime;
+
+      console.log(`Time taken: ${elapsedTime} ms`);
+
+      await prisma.$disconnect(); // disconnect from the database
+    }
+
+    performTimeCalculation();
+
