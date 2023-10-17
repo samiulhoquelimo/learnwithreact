@@ -25,4 +25,3 @@ If you need any help regarding the assignment, please join the support session a
 
 
 // npx prisma migrate dev
-// npx prisma migrate dev --init

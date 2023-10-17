@@ -1,56 +1,84 @@
 import {NextResponse} from "next/server";
 import {PrismaClient} from "@prisma/client";
+import {stringify} from "@/helper/helper";
+
+export async function GET(req, res) {
+    const prisma = new PrismaClient()
+    try {
+        const result = await prisma.category.findMany()
+        return NextResponse.json({success: true, data: stringify(result)})
+    } catch (e) {
+        return NextResponse.json({status: false, data: e.message})
+    } finally {
+        prisma.$disconnect()
+    }
+}
 
 export async function POST(req, res) {
-    // call api here
-}
-
-export async function createCategory(category) {
     try {
+        const reqBody = await req.json();
         const prisma = new PrismaClient();
-        const result = await prisma.category.create({data: category});
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.category.create({data: reqBody})
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function createCategories(users) {
+export async function PUT(req, res) {
     try {
+        let reqBody = await req.json();
+        let {searchParams} = new URL(req.url);
+        let category_id = searchParams.get('category_id');
+
         const prisma = new PrismaClient();
-        const result = await prisma.category.createMany({data: users});
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.category.update(
+            {
+                where: {id: parseInt(category_id)},
+                data: reqBody
+            }
+        )
+
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function readCategories() {
+export async function DELETE(req, res) {
     try {
+        let {searchParams} = new URL(req.url);
+        let category_id = searchParams.get('category_id');
+
         const prisma = new PrismaClient();
-        const result = await prisma.category.findMany();
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.category.delete(
+            {
+                where: {
+                    id: parseInt(category_id),
+                }
+            }
+        )
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function updateCategory(category) {
+export async function PATCH(req, res) {
     try {
-        const prisma = new PrismaClient()
-        const result = await prisma.category.update({data: category})
-        return NextResponse.json({success: true, data: result})
-    } catch (e) {
-        return NextResponse.json({success: false, data: e})
-    }
-}
+        let {searchParams} = new URL(req.url);
+        let category_id = searchParams.get('category_id');
 
-export async function deleteCategory(condition) {
-    try {
-        const prisma = new PrismaClient()
-        const result = await prisma.category.delete({where: condition})
-        return NextResponse.json({success: true, data: result})
+        const prisma = new PrismaClient();
+        const result = await prisma.category.findUnique(
+            {
+                where: {
+                    id: parseInt(category_id)
+                }
+            }
+        )
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }

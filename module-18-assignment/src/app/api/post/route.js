@@ -1,56 +1,84 @@
 import {NextResponse} from "next/server";
 import {PrismaClient} from "@prisma/client";
+import {stringify} from "@/helper/helper";
+
+export async function GET(req, res) {
+    const prisma = new PrismaClient()
+    try {
+        const result = await prisma.post.findMany()
+        return NextResponse.json({success: true, data: stringify(result)})
+    } catch (e) {
+        return NextResponse.json({status: false, data: e.message})
+    } finally {
+        prisma.$disconnect()
+    }
+}
 
 export async function POST(req, res) {
-    // call api here
-}
-
-export async function createPost(post) {
     try {
+        const reqBody = await req.json();
         const prisma = new PrismaClient();
-        const result = await prisma.post.create({data: post});
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.post.create({data: reqBody})
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function createPosts(users) {
+export async function PUT(req, res) {
     try {
+        let reqBody = await req.json();
+        let {searchParams} = new URL(req.url);
+        let post_id = searchParams.get('post_id');
+
         const prisma = new PrismaClient();
-        const result = await prisma.post.createMany({data: users});
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.post.update(
+            {
+                where: {id: parseInt(post_id)},
+                data: reqBody
+            }
+        )
+
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function readPosts() {
+export async function DELETE(req, res) {
     try {
+        let {searchParams} = new URL(req.url);
+        let post_id = searchParams.get('post_id');
+
         const prisma = new PrismaClient();
-        const result = await prisma.post.findMany();
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.post.delete(
+            {
+                where: {
+                    id: parseInt(post_id),
+                }
+            }
+        )
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function updatePost(post) {
+export async function PATCH(req, res) {
     try {
-        const prisma = new PrismaClient()
-        const result = await prisma.post.update({data: post})
-        return NextResponse.json({success: true, data: result})
-    } catch (e) {
-        return NextResponse.json({success: false, data: e})
-    }
-}
+        let {searchParams} = new URL(req.url);
+        let post_id = searchParams.get('post_id');
 
-export async function deletePost(condition) {
-    try {
-        const prisma = new PrismaClient()
-        const result = await prisma.post.delete({where: condition})
-        return NextResponse.json({success: true, data: result})
+        const prisma = new PrismaClient();
+        const result = await prisma.post.findUnique(
+            {
+                where: {
+                    id: parseInt(post_id)
+                }
+            }
+        )
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }

@@ -1,67 +1,84 @@
 import {NextResponse} from "next/server";
 import {PrismaClient} from "@prisma/client";
+import {stringify} from "@/helper/helper";
+
+export async function GET(req, res) {
+    const prisma = new PrismaClient()
+    try {
+        const result = await prisma.user.findMany()
+        return NextResponse.json({success: true, data: stringify(result)})
+    } catch (e) {
+        return NextResponse.json({status: false, data: e.message})
+    } finally {
+        prisma.$disconnect()
+    }
+}
 
 export async function POST(req, res) {
-    return createUser(
-        {
-            firstName: 'First',
-            middleName: 'Middle',
-            lastName: 'Last',
-            mobile: '01700000000',
-            email: 'a@b.com',
-            profile: 'Profile',
-            passwordHash: 'Password',
-            intro: 'Intro'
-        }
-    )
-}
-
-export async function createUser(user) {
     try {
+        const reqBody = await req.json();
         const prisma = new PrismaClient();
-        const result = await prisma.user.create({data: user});
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.user.create({data: reqBody})
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function createUsers(users) {
+export async function PUT(req, res) {
     try {
+        let reqBody = await req.json();
+        let {searchParams} = new URL(req.url);
+        let user_id = searchParams.get('user_id');
+
         const prisma = new PrismaClient();
-        const result = await prisma.user.createMany({data: users});
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.user.update(
+            {
+                where: {id: parseInt(user_id)},
+                data: reqBody
+            }
+        )
+
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function readUsers() {
+export async function DELETE(req, res) {
     try {
+        let {searchParams} = new URL(req.url);
+        let user_id = searchParams.get('user_id');
+
         const prisma = new PrismaClient();
-        const result = await prisma.user.findMany();
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.user.delete(
+            {
+                where: {
+                    id: parseInt(user_id),
+                }
+            }
+        )
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function updateUser(user) {
+export async function PATCH(req, res) {
     try {
-        const prisma = new PrismaClient()
-        const result = await prisma.user.update({data: user})
-        return NextResponse.json({success: true, data: result})
-    } catch (e) {
-        return NextResponse.json({success: false, data: e})
-    }
-}
+        let {searchParams} = new URL(req.url);
+        let user_id = searchParams.get('user_id');
 
-export async function deleteUser(condition) {
-    try {
-        const prisma = new PrismaClient()
-        const result = await prisma.user.delete({where: condition})
-        return NextResponse.json({success: true, data: result})
+        const prisma = new PrismaClient();
+        const result = await prisma.user.findUnique(
+            {
+                where: {
+                    id: parseInt(user_id)
+                }
+            }
+        )
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }

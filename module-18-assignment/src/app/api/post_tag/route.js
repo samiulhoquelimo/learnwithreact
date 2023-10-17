@@ -5,35 +5,8 @@ import {stringify} from "@/helper/helper";
 export async function GET(req, res) {
     const prisma = new PrismaClient()
     try {
-        const result = await prisma.product.findMany()
-        const count = await prisma.product.count();
-        const averagePrice = await prisma.product.aggregate({
-            _avg: {
-                price: true,
-            }
-        })
-        const maxPrice = await prisma.product.aggregate({
-            _max: {
-                price: true,
-            }
-        })
-        const totalPrice = await prisma.product.aggregate({
-            _sum: {
-                price: true,
-            },
-        });
-        const groupedProduct = await prisma.product.groupBy({
-            by: ['price'],
-        });
-        return NextResponse.json({
-            success: true,
-            data: stringify(result),
-            grouped: stringify(groupedProduct),
-            count: count,
-            averagePrice: averagePrice._avg.price,
-            maxPrice: maxPrice._max.price,
-            totalPrice: totalPrice._sum.price,
-        })
+        const result = await prisma.post_tag.findMany()
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
         return NextResponse.json({status: false, data: e.message})
     } finally {
@@ -45,7 +18,7 @@ export async function POST(req, res) {
     try {
         const reqBody = await req.json();
         const prisma = new PrismaClient();
-        const result = await prisma.product.create({data: reqBody})
+        const result = await prisma.post_tag.create({data: reqBody})
         return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
         return NextResponse.json({success: false, data: e.message})
@@ -56,12 +29,12 @@ export async function PUT(req, res) {
     try {
         let reqBody = await req.json();
         let {searchParams} = new URL(req.url);
-        let product_id = searchParams.get('product_id');
+        let post_tag_id = searchParams.get('post_tag_id');
 
         const prisma = new PrismaClient();
-        const result = await prisma.product.update(
+        const result = await prisma.post_tag.update(
             {
-                where: {id: parseInt(product_id)},
+                where: {id: parseInt(post_tag_id)},
                 data: reqBody
             }
         )
@@ -75,13 +48,13 @@ export async function PUT(req, res) {
 export async function DELETE(req, res) {
     try {
         let {searchParams} = new URL(req.url);
-        let product_id = searchParams.get('product_id');
+        let post_tag_id = searchParams.get('post_tag_id');
 
         const prisma = new PrismaClient();
-        const result = await prisma.product.delete(
+        const result = await prisma.post_tag.delete(
             {
                 where: {
-                    id: parseInt(product_id),
+                    id: parseInt(post_tag_id),
                 }
             }
         )
@@ -94,13 +67,13 @@ export async function DELETE(req, res) {
 export async function PATCH(req, res) {
     try {
         let {searchParams} = new URL(req.url);
-        let product_id = searchParams.get('product_id');
+        let post_tag_id = searchParams.get('post_tag_id');
 
         const prisma = new PrismaClient();
-        const result = await prisma.product.findUnique(
+        const result = await prisma.post_tag.findUnique(
             {
                 where: {
-                    id: parseInt(product_id)
+                    id: parseInt(post_tag_id)
                 }
             }
         )

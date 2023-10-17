@@ -1,56 +1,84 @@
 import {NextResponse} from "next/server";
 import {PrismaClient} from "@prisma/client";
+import {stringify} from "@/helper/helper";
+
+export async function GET(req, res) {
+    const prisma = new PrismaClient()
+    try {
+        const result = await prisma.tag.findMany()
+        return NextResponse.json({success: true, data: stringify(result)})
+    } catch (e) {
+        return NextResponse.json({status: false, data: e.message})
+    } finally {
+        prisma.$disconnect()
+    }
+}
 
 export async function POST(req, res) {
-    // call api here
-}
-
-export async function createTag(tag) {
     try {
+        const reqBody = await req.json();
         const prisma = new PrismaClient();
-        const result = await prisma.tag.create({data: tag});
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.tag.create({data: reqBody})
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function createTags(users) {
+export async function PUT(req, res) {
     try {
+        let reqBody = await req.json();
+        let {searchParams} = new URL(req.url);
+        let tag_id = searchParams.get('tag_id');
+
         const prisma = new PrismaClient();
-        const result = await prisma.tag.createMany({data: users});
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.tag.update(
+            {
+                where: {id: parseInt(tag_id)},
+                data: reqBody
+            }
+        )
+
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function readTags() {
+export async function DELETE(req, res) {
     try {
+        let {searchParams} = new URL(req.url);
+        let tag_id = searchParams.get('tag_id');
+
         const prisma = new PrismaClient();
-        const result = await prisma.tag.findMany();
-        return NextResponse.json({success: true, data: result})
+        const result = await prisma.tag.delete(
+            {
+                where: {
+                    id: parseInt(tag_id),
+                }
+            }
+        )
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
 
-export async function updateTag(tag) {
+export async function PATCH(req, res) {
     try {
-        const prisma = new PrismaClient()
-        const result = await prisma.tag.update({data: tag})
-        return NextResponse.json({success: true, data: result})
-    } catch (e) {
-        return NextResponse.json({success: false, data: e})
-    }
-}
+        let {searchParams} = new URL(req.url);
+        let tag_id = searchParams.get('tag_id');
 
-export async function deleteTag(condition) {
-    try {
-        const prisma = new PrismaClient()
-        const result = await prisma.tag.delete({where: condition})
-        return NextResponse.json({success: true, data: result})
+        const prisma = new PrismaClient();
+        const result = await prisma.tag.findUnique(
+            {
+                where: {
+                    id: parseInt(tag_id)
+                }
+            }
+        )
+        return NextResponse.json({success: true, data: stringify(result)})
     } catch (e) {
-        return NextResponse.json({success: false, data: e})
+        return NextResponse.json({success: false, data: e.message})
     }
 }
