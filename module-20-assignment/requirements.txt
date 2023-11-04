@@ -1,0 +1,30 @@
+Assignment 1 (Next.js Prisma Full Stack Project)
+In this assignment, you have to create a Blog Magazine related web application. Where to use nextjs params.
+
+Requirements:
+
+1. You need to create a total of seven pages.
+   And they are: home page, about page, service page, blog page, contact page, login page, registration page
+2. Header & footer will be the same on all pages except the login page, and registration page.
+3. The home page will have four more unique sections apart from the header & footer.
+   One of these sections should display blog items that will come dynamically.
+4. The about page will have two more unique sections apart from the header & footer.
+5. The service page will have one more section apart from the header & footer.
+   Where services should be placed dynamically.
+6. The blog page will have one more section apart from the header & footer.
+   Where the blogs should be placed dynamically.
+7. The contact page will have a form where dynamic contact should be arranged.
+8. Users can register on the registration page and their information will be stored in the database.
+9. login page In order to enter the dashboard you must login, in which case you must use middleware.
+10. There must be a dashboard where CRUD operations of blog & service can be executed.
+    Can't access the dashboard without login.
+11. Logout from the dashboard should be provided.
+
+If you need any help regarding the assignment, please join the support session and get it resolved.
+
+Submission Instruction :
+
+Please submit your github repository link.
+Please include the note.txt file in the repository.
+And submit the live link there.
+Without a live link, you will get 0 Mark.
