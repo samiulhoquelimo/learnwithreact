@@ -1,0 +1,65 @@
+1. How to calculate average with Prisma?
+Answer: To calculate the average of a specific numeric column, we can use Prisma's aggregation method avg. 
+Example:
+    const average = await prisma.posts.aggregate({
+        avg: {
+            value: true
+        }
+    });
+    console.log("Average Value:", average.value);
+
+
+
+
+2. How to calculate count with Prisma?
+Answer: To count the number of records in a table, we can use the count method.
+Example:
+    const count = await prisma.posts.count();
+    console.log("Total Posts:", count);
+
+
+
+
+3. How to return all published posts in ascending order with Prisma?
+Answer: Returning all published posts in ascending order with Prisma, we can do ascending order of posts with column publishedAt.
+Where publishedAt is the timestamp of publication date.
+Example:
+    const publishedPosts = await prisma.posts.findMany({
+        where: {
+            published: true
+        },
+        orderBy: {
+            publishedAt: 'asc'
+        }
+    });
+    console.log("Published Posts:", publishedPosts);
+
+
+
+
+4. How to extract data with groupBy using Prisma?
+Answer: To extract data based on a specific column, we can use the groupBy method. 
+Example:
+    const groupedData = await prisma.posts.groupBy({
+        by: ['userId'],
+        count: true
+    });
+    console.log("Grouped Data:", groupedData);
+
+This will group the data based on the userId and provide a count of each group.
+
+
+
+
+5. How to delete a lot of data at once with Prisma?
+Answer: To delete multiple records that meet certain criteria, we can use the deleteMany method.
+Example:
+    const deletedRecords = await prisma.posts.deleteMany({
+        where: {
+            userId: 7,
+        },
+    });
+    console.log("Deleted Records:", deletedRecords);
+
+
+
